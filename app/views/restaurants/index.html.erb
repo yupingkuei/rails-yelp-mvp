@@ -1,9 +1,14 @@
-<h1>Restaurants</h1>
+<div class="d-flex justify-content-between">
+  <h1>Restaurants</h1>
+  <%= link_to '✚', new_restaurant_path %>
+</div>
 <% @restaurants.each do |restaurant| %>
-<li>
-  <%= link_to restaurant.name, restaurant_path(restaurant) %>
-  <%= restaurant.address %>
-  <%= restaurant.phone_number %>
-  <%= restaurant.category %>
-</li>
+  <h2>
+    <%= link_to restaurant.name.capitalize, restaurant_path(restaurant) %>
+  </h2>
+  <li>
+    <%= restaurant.address %>
+    <%= restaurant.phone_number %>
+    <%= restaurant.category %>
+  </li>
 <% end %>
